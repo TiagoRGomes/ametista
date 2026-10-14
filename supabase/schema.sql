@@ -10,6 +10,7 @@ create table if not exists public.admin_users (
 
 create table if not exists public.site_content (
   id integer primary key default 1 check (id = 1),
+  theme_primary text not null default '#f0782c',
   business_name text not null default 'AMETISTA',
   tagline text not null default 'Materiais para construção',
   hero_badge text not null default 'A sua loja de confiança',
@@ -66,6 +67,9 @@ create table if not exists public.products (
 create index if not exists categories_position_idx on public.categories(position);
 create index if not exists products_position_idx on public.products(position);
 create index if not exists products_category_id_idx on public.products(category_id);
+
+-- Keep existing installations up to date with the theme color column.
+alter table public.site_content add column if not exists theme_primary text not null default '#f0782c';
 
 -- Seed the editable home page and category/catalog starter items (prices are intentionally blank).
 insert into public.site_content (id, address) values (1, 'Avenida Alvarenga Peixoto, 807 - Centro, Inconfidentes - MG, Brasil')

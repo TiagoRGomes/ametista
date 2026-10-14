@@ -6,9 +6,9 @@
 html { scroll-behavior: smooth; scroll-padding-top: 95px; }
 body { margin: 0; min-width: 320px; }
 button, input, select, textarea { font: inherit; }
-::selection { background: #fd8d3c; color: white; }
+::selection { background: var(--brand-color, #f0782c); color: var(--brand-contrast-color, #000); }
 .page-wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .nav-link { transition: color .2s ease; }
-.nav-link:hover, .footer-link:hover { color: #fd8d3c; }
-.eyebrow { font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .2em; color: #fd8d3c; }
+.nav-link:hover, .footer-link:hover { color: var(--brand-color, #f0782c); }
+.eyebrow { font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .2em; color: var(--brand-color, #f0782c); }
 .section-title { margin-top: .7rem; max-width: 850px; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.13; letter-spacing: -.035em; font-weight: 900; color: #242424; }

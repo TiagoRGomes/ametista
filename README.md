@@ -72,6 +72,7 @@ O arquivo `public/_redirects` encaminha URLs como `/admin` ao aplicativo React n
 
 - Login do administrador via Supabase Auth (sem cadastro público no app).
 - Editor de textos da home, logotipo, foto de destaque, contactos, endereço e horário.
+- Aba **Aparência** com seletor de cor, paletas prontas, campo hexadecimal e pré-visualização; a cor do tema fica salva no Supabase e atualiza o site sem novo deploy.
 - Seção final com mapa incorporado do Google Maps e botão “Como chegar”, abrindo a rota no Google Maps do celular. O endereço inicial é Avenida Alvarenga Peixoto, 807 - Centro, Inconfidentes - MG, Brasil; ele pode ser atualizado em Administração → Página inicial → Morada.
 - Mostrar/ocultar seções e reorganizar a ordem da página.
 - Criar, editar, excluir e ocultar categorias.
@@ -79,8 +80,16 @@ O arquivo `public/_redirects` encaminha URLs como `/admin` ao aplicativo React n
 - Upload de imagens para Supabase Storage (limite de 8 MB por arquivo).
 - Regras de Row Level Security (RLS): visitantes leem conteúdo publicado; somente UIDs presentes em `admin_users` podem editar conteúdo e mídia.
 
+## Atualização do tema de cores em uma instalação existente
+
+Se você já executou `supabase/schema.sql` no seu projeto Supabase, execute somente `supabase/theme-color-migration.sql` no SQL Editor. Essa migração adiciona a coluna `theme_primary` sem apagar produtos, categorias, usuários ou conteúdo já cadastrado. Depois atualize o código no GitHub e publique um novo deploy uma única vez para disponibilizar a nova função do painel. As próximas trocas de cor são feitas pelo admin e não exigem deploy.
+
 ## Notas
 
 - O catálogo inicial contém linhas de produtos fornecidas pela loja, não preços de inventário. Os preços começam vazios para evitar valores incorretos.
 - A fachada e as fotos originais são mantidas em `public/images/`. Imagens enviadas pelo CMS usam o bucket `ametista-media`.
 - Depois que o site está publicado, alterações feitas pelo painel gravam diretamente no Supabase e passam a aparecer no site público após recarregar a página.
+
+## Identidade visual laranja
+
+A cor inicial do tema é `#f0782c`. Em Administração → Aparência, escolha um dos tons sugeridos ou informe uma cor hexadecimal. A faixa superior, o rodapé, os botões e os destaques usam a cor exata selecionada. O texto sobre fundos coloridos escolhe preto ou branco de acordo com o melhor contraste.

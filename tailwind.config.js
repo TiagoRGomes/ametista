@@ -3,7 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: { brand: { DEFAULT: '#fd8d3c', dark: '#df7021' }, ink: '#242424' },
+      colors: { brand: { DEFAULT: 'rgb(var(--brand-rgb) / <alpha-value>)', dark: 'var(--brand-dark-color)', contrast: 'rgb(var(--brand-contrast-rgb) / <alpha-value>)' }, ink: '#242424' },
       boxShadow: { card: '0 18px 48px rgba(36,36,36,.09)' },
     },
   },

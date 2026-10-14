@@ -1,5 +1,6 @@
 export const DEFAULT_SITE = {
   id: 1,
+  theme_primary: '#f0782c',
   business_name: 'AMETISTA',
   tagline: 'Materiais para construção',
   hero_badge: 'A sua loja de confiança',
