@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #242424; background: #fff; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+body { margin: 0; min-width: 320px; }
+button, input, select, textarea { font: inherit; }
+::selection { background: #f0782c; color: white; }
+.page-wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.nav-link { transition: color .2s ease; }
+.nav-link:hover, .footer-link:hover { color: #ed7024; }
+.eyebrow { font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .2em; color: #bd5718; }
+.section-title { margin-top: .7rem; max-width: 850px; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.13; letter-spacing: -.035em; font-weight: 900; color: #242424; }
